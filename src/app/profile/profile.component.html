@@ -1,0 +1,114 @@
+
+    <main>
+        <header>
+                <ul style="justify-content: space-around;">
+                        <!-- <li><img class = "logo" src="https://pngimage.net/wp-content/uploads/2018/06/wechat-logo-png-transparent-background-6.png" alt="" srcset=""></li> -->
+                       <!-- <li class="appname">WeChat</li> -->
+                      
+                       <li></li>
+                       <li class="signOut right"> <a [routerLink]="['/login']" routerLinkActive="router-link-active" >   <button class="uk-button uk-button-primary uk-border-rounded" style="width: 110%;">SignOut</button></a></li>
+                       <li class="username right"></li>
+                       <li>
+                        <div id="offcanvas-usage" uk-offcanvas>
+                            <div class="uk-offcanvas-bar">
+                        
+                                <button class="uk-offcanvas-close" type="button" uk-close></button>
+                        
+                                <img style="margin:8% 8% 8% 15%; background-color: aqua;" class = "thumb uk-border-pill" src="../../assets//images/chatimg.png" align="middle" height="220" width="180" >
+                        
+                                <div class="uk-card uk-card-default uk-grid-collapse uk-child-width-1-2@s uk-margin" uk-grid>
+                                    <div class="uk-flex-last@s uk-card-media-right uk-cover-container">
+                                        <span uk-icon="icon:pencil; ratio:1.5" style="margin-left: 50%;cursor: pointer;" class="uk-margin-top"  uk-tooltip="Edit"></span>
+                                        <canvas width="600" height="100"></canvas>
+                                    </div>
+                                    <div>
+                                        <div >
+                                            <p class="uk-card-title uk-margin-left uk-margin-top" style="font-size:16px;color:rgb(21, 148, 116)">Your Name</p>
+                                            <p class="uk-card-title uk-margin-left " style="font-size :16px;">{{name}}</p>
+                                            
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="uk-card uk-card-default uk-grid-collapse uk-child-width-1-2@s uk-margin" uk-grid>
+                                    <div class="uk-flex-last@s uk-card-media-right uk-cover-container">
+                                        <span uk-icon="icon:pencil; ratio:1.5" style="margin-left: 50%;cursor: pointer;" class="uk-margin-top"  uk-tooltip="Edit"></span>
+                                        <canvas width="600" height="100"></canvas>
+                                    </div>
+                                    <div>
+                                        <div >
+                                            <p class="uk-card-title uk-margin-left uk-margin-top" style="font-size:16px;color:rgb(21, 148, 116)">Your Email</p>
+                                            <p class="uk-card-title uk-margin-left " style="font-size :16px;">{{email}}</p>
+                                            
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="uk-margin uk-margin-left">
+                                <qrcode [qrdata]="qrdata" [size]="256" [level]="'M'"></qrcode>
+                            </div>
+                            </div>
+                        </div>
+                       </li>
+                       <li uk-toggle="target: #offcanvas-usage" class="user right uk-inline " uk-tooltip="Your Profile" style="cursor: pointer;"><img class = "thumb" src="../../assets//images/chatimg.png" align="middle" height="70" width="67" >
+                            
+                            <div data-uk-dropdown>
+                                <ul class="uk-nav uk-dropdown-nav">
+                                    <li class="uk-active"><a href="#">Active</a></li>
+                                    <li><a href="#">Item</a></li>
+                                    <li class="uk-nav-header">Header</li>
+                                    <li><a href="#">Item</a></li>
+                                    <li><a href="#">Item</a></li>
+                                    <li class="uk-nav-divider"></li>
+                                    <li><a href="#">Item</a></li>
+                                </ul>
+                            </div>
+
+                      </li>
+                       
+               
+                      
+                       
+                </ul>
+        </header>
+
+            <div class="container">
+            
+                        <div class="onlineUser">
+                                <!-- <input uk-icon="icon:search" class="uk-input uk-form-width-large uk-margin-left uk-border-pill" type="text" placeholder="Type message here"> -->
+                                <div class="users">
+                                        <table class="uk-table uk-table-striped">
+                                                <thead>
+                                                    <tr>
+                                                       
+                                                       
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    <tr>
+                                                        <td style="cursor: pointer;"><span ><img class="uk-border-pill" src="../../assets/images/sindh.jpg" alt="" width="30" height="30"></span> Abhbishek sindhvani</td>
+                                                        
+                                                    </tr>
+                                                    <tr>
+                                                        <td style="cursor: pointer;"><span ><img class="uk-border-pill" src="../../assets/images/harbola.jpeg" alt="" width="30" height="30"></span> Mayank Harbola</td>
+                                                       
+                                                    </tr>
+                                                    <tr>
+                                                        <td style="cursor:pointer"><span ><img class="uk-border-pill" src="../../assets/images/bisht.png" alt="" width="30" height="30"></span> Naresh Bishts</td>
+                                                       
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                            
+                                </div>
+                               
+                        </div> 
+
+                        <div class="Area">
+                                <div class="chat"></div>
+                                <div class="sendMsg">
+                                    <input class="uk-input uk-form-width-large uk-margin-left uk-border-pill" type="text" placeholder="Type message here">
+                                        <span uk-icon="icon:  triangle-right; ratio:3" style="color: aqua;cursor: pointer;"></span>
+                                </div>
+                            </div>
+
+            </div>
+    </main>
