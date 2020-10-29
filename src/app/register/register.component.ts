@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { AuthService } from '../auth.service'
+import { AuthService } from '../auth.service';
+import { ActivatedRoute,Router } from '@angular/router';
+import { PojoService } from '../pojo.service'
 @Component({
   selector: 'app-register',
   templateUrl: './register.component.html',
@@ -12,7 +14,7 @@ export class RegisterComponent implements OnInit {
     email:'',
     pass:''
   };
-  constructor(private service:AuthService) { }
+  constructor(private service:AuthService, private router:Router, private pojo:PojoService) { }
 
   ngOnInit(): void {
   }
@@ -20,6 +22,8 @@ export class RegisterComponent implements OnInit {
   signUp(){
     this.service.signUp(this.data).subscribe(res=>{
       console.log(res);
+      this.router.navigate(['login']);
+      this.pojo.setData(this.data);
     },err=>{
       console.log(err);
     })

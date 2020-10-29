@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-
+import { PojoService } from '../pojo.service'
 @Component({
   selector: 'app-profile',
   templateUrl: './profile.component.html',
@@ -9,10 +9,13 @@ export class ProfileComponent implements OnInit {
   public qrdata: string = null;
   name:any;
   email:any;
-  constructor() { }
+  constructor(private service:PojoService) { }
 
   ngOnInit(): void {
-    this.qrdata = 'Harbole ki maa ki chut';
+    this.qrdata = 'saurabh sinigh';
+    let data = this.service.getData();
+    this.name="saurabh singh";
+    this.email=data.email;
   }
 
 }

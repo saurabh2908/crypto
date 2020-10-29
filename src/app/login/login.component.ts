@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { AuthService } from '../auth.service';
 import { ActivatedRoute,Router } from '@angular/router';
+import { PojoService } from '../pojo.service'
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
@@ -12,7 +13,7 @@ export class LoginComponent implements OnInit {
     email:'',
     pass:''
   };
-  constructor(private service:AuthService, private router:Router) { }
+  constructor(private service:AuthService, private router:Router, private pojo:PojoService) { }
 
   ngOnInit(): void {
   }
@@ -21,6 +22,7 @@ export class LoginComponent implements OnInit {
     console.log("data is",this.data)
     this.service.signIn(this.data).subscribe(res=>{
       console.log("i am in",res);
+      // this.pojo.setData(this.data);
       this.router.navigate(['chat']);
     },err=>{
       console.log(err);
